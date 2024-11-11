@@ -1,0 +1,81 @@
+queue implementation using linear array 
+
+#include<stdio.h>
+#include<conio.h>
+#define MAX 10
+int queue[MAX],i,val,front=-1,rear=-1;
+void enque();
+void deque();
+void display();
+void main()
+{
+int ch;
+clrscr();
+while(1)
+{
+printf("\n1.enque\n2.deque\n3.display\n4.exit");
+printf("\nenter your choice:");
+scanf("%d",&ch);
+switch (ch)
+{
+case 1:enque();
+      break;
+case 2:deque();
+      break;
+case 3:display();
+      break;
+case 4:exit();
+      break;
+default:printf("\ninvalid choice");
+}
+}
+}
+void enque()
+{
+printf("\nenter value:");
+scanf("%d", &val);
+if(rear==MAX-1)
+{
+printf("\nqueue is full");
+}
+else
+{
+if(front==-1 && rear==-1)
+{
+front=rear=0;
+queue[rear]=val;
+printf("\n%d is inserted",queue[rear]);
+}
+else{
+rear++;
+queue[rear]=val;
+printf("%d is inserted",queue[rear]);
+}
+}
+}
+void  deque()
+{
+if(front==-1 && rear==-1)
+{
+printf("\nqueue is empty");
+}
+else
+{
+if(front==rear)
+{
+printf("%d is deleted",queue[rear]);
+frint=rear=-1;
+}
+else
+{
+front++;
+}
+}
+}
+void display()
+{
+for(i=front;i<=rear;i++)
+{
+printf("\t%d",queue[i]);
+}
+}

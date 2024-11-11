@@ -1,0 +1,108 @@
+queue implementation using linklist
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct node
+{
+int data;
+strcut node *next;
+};
+struct node *front=NULL;
+struct node *rear=NULL;
+struct node *temp;
+struct node *ptr;
+void enque();
+void deque();
+void display();
+void main()
+{
+int ch;
+clrscr();
+while(1)
+{
+printf("\n1.insert\n2.delete\n3.display\n4.exit");
+printf("\nenter your choice:");
+switch (ch)
+{
+case1 1:enque();
+        break;
+
+case1 2:deque();
+        break;
+
+case1 3:display();
+        break;
+
+case1 4:exit();
+        break;
+default :printf("\ninvalid choice");
+}
+}
+}
+void enque()
+{
+int val;
+ptr= (struct node*)malloc(sizepf(struct node));
+if(ptr==NULL)
+{
+printf("\nqueue is full");
+}
+else
+{
+ptintf("\nenter value:");
+scanf("%d", &val);
+if(front==NULL)
+{
+ptr->data=val;
+ptr->next=NULL;
+front=ptr;
+rear=ptr;
+}
+else
+{
+ptr->data=val;
+ptr->next=NULL;
+rear->next=ptr;
+rear=ptr;
+}
+}
+}
+void deque()
+{
+if(front==NULL)
+{
+printf("\nqueue is empty");
+}
+else
+{
+temp=front;
+front=front->next;
+temp->next=NULL;
+printf("\n%d is deleted",temp->data);
+free(temp);
+}
+}
+void display()
+{
+if(front==NULL)
+{
+printf("\nqueue is empty");
+}
+else
+{
+temp=front;
+while(temp!=NULL)
+{
+printf("\n%d",temp->data);
+temp=temp->next;
+}
+}
+}
+
+
+
+
+
+
+ 

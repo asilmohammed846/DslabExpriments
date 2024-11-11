@@ -1,0 +1,98 @@
+stack implementation using linklist
+
+ #include<stdio.h>
+#include<conio.h>
+#inclide<stdlib.h>
+struct node
+{
+int data;
+struct mode *next;
+};
+void push();
+void pop();
+void display();
+struct node *top=NULL;
+void main()
+{
+int ch;
+clrscr();
+while(1)
+{
+print("\n1.push\n2.pop\n3.display\n4.exit");
+printf("\nenter your choice:");
+scanf("%d", &ch)
+switch (ch)
+{
+case 1:push();
+       break;
+case 2:pop();
+       break;
+case 3:dsiplay();
+       break;
+case 4:exit();
+       break;
+default :printf("\ninvalid choice");
+}
+}
+}
+void push()
+{
+ int val;
+struct node *ptr;
+ptr=(struct node*)malloc(sizeof(struct node));
+if(ptr==NULL)
+{
+printf("\nmemory is not allocated");
+}
+else
+{
+printf("\nenter val");
+scanf("%d", &val);
+if(top==NULL)
+{
+ptr->data=val;
+ptr->next=NULL;
+top=ptr;
+}
+else
+{
+ptr->data=val
+ptr->next=top;
+top=ptr;
+}
+printf("\n%d is pushed",top->data);
+}
+}
+void pop()
+{
+if(top==NULL)
+{
+printf("\nstack is empty");
+}
+else
+{
+struct node*temp;
+temp=top;
+top=top->next;
+printf("\n%d is delted",temp->data);
+temp->next=NULL;
+free(temp);
+}
+}
+void display()
+{
+if(top==NULL)
+{
+printf("\nstack is empty");
+}
+else
+{
+struct node *temp;
+temp=top;
+while(temp!=NULL)
+{
+printf("\n%d",temp->data);
+temp=temp->next;
+}
+}
+}
